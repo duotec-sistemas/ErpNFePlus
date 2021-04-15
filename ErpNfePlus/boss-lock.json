@@ -1,0 +1,86 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2021-04-13T16:10:20.9468797-03:00",
+	"installedModules": {
+		"github.com/bittencourtthulio/horse-etag": {
+			"name": "horse-etag",
+			"version": "master",
+			"hash": "69ccbf883d6af70440ae0b12c66ba696",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/dliocode/horse-utils-clientip": {
+			"name": "horse-utils-clientip",
+			"version": "0.0.6",
+			"hash": "db4c16721abe55f9f8c42c7990101361",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/handle-exception": {
+			"name": "handle-exception",
+			"version": "0.1.4",
+			"hash": "1152772d75f59dbb562cc7b7711a8ebe",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse": {
+			"name": "horse",
+			"version": "2.0.13",
+			"hash": "985da2054d3c705bc211797c653e47ba",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-basic-auth": {
+			"name": "horse-basic-auth",
+			"version": "v1.1.4",
+			"hash": "55fc41c92a7e54292d843b18e0684557",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-cors": {
+			"name": "horse-cors",
+			"version": "1.0.3",
+			"hash": "248f37dd844f5a4c4ff78364e5a86027",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-logger": {
+			"name": "horse-logger",
+			"version": "2.0.2",
+			"hash": "bfb121c6e85b5cfeedbd445c962a3fed",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/jhonson": {
+			"name": "jhonson",
+			"version": "1.1.1",
+			"hash": "5740da7df1068b882117a68df8098c9a",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/viniciussanchez/dataset-serialize": {
+			"name": "dataset-serialize",
+			"version": "v2.3.0",
+			"hash": "916555f057218c63d26c06a3c0bd12f4",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/viniciussanchez/restrequest4delphi": {
+			"name": "restrequest4delphi",
+			"version": "v3.0.5",
+			"hash": "c4ead963093502712c6af02f86b819d0",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
