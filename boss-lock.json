@@ -10,6 +10,14 @@
 			"failed": false,
 			"changed": false
 		},
+		"github.com/bittencourtthulio/router4delphi": {
+			"name": "router4delphi",
+			"version": "1.0.4",
+			"hash": "69fc1ce6ceb96cdcd4af20ea48863456",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"github.com/dliocode/horse-utils-clientip": {
 			"name": "horse-utils-clientip",
 			"version": "0.0.6",

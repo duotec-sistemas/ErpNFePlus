@@ -1,0 +1,62 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 734
+  ClientWidth = 1024
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Rectangle1: TRectangle
+    Align = Client
+    Fill.Color = claAntiquewhite
+    Size.Width = 1024.000000000000000000
+    Size.Height = 734.000000000000000000
+    Size.PlatformDefault = False
+    object Rectangle2: TRectangle
+      Align = MostTop
+      Size.Width = 1024.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Rectangle5: TRectangle
+      Align = Left
+      Position.Y = 49.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 685.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Rectangle3: TRectangle
+      Align = Left
+      Position.X = 169.000000000000000000
+      Position.Y = 49.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 685.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Grid1: TGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 392.000000000000000000
+    Position.Y = 184.000000000000000000
+    Size.Width = 553.000000000000000000
+    Size.Height = 417.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 533.000000000000000000
+    Viewport.Height = 392.000000000000000000
+    object Column1: TColumn
+    end
+    object Column2: TColumn
+    end
+  end
+  object Button1: TButton
+    Position.X = 664.000000000000000000
+    Position.Y = 688.000000000000000000
+    TabOrder = 3
+    Text = 'Button1'
+    OnClick = Button1Click
+  end
+end
