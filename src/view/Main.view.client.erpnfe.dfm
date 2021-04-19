@@ -3,7 +3,7 @@ object View_Main: TView_Main
   Top = 0
   Align = alClient
   Caption = 'View_Main'
-  ClientHeight = 641
+  ClientHeight = 729
   ClientWidth = 1200
   Color = clLime
   Font.Charset = DEFAULT_CHARSET
@@ -22,7 +22,7 @@ object View_Main: TView_Main
     Left = 3
     Top = 3
     Width = 1194
-    Height = 635
+    Height = 723
     Align = alClient
     ParentBackground = False
     TabOrder = 0
@@ -70,85 +70,35 @@ object View_Main: TView_Main
         Caption = 'Pnl_Logo'
         TabOrder = 1
       end
-      object Button4: TButton
-        Left = 872
-        Top = 12
-        Width = 75
-        Height = 25
-        Caption = 'Button4'
-        TabOrder = 2
-        OnClick = Button4Click
-      end
-      object Button5: TButton
-        Left = 1048
-        Top = 16
-        Width = 75
-        Height = 25
-        Caption = 'Button5'
-        TabOrder = 3
-        OnClick = Button5Click
-      end
     end
     object Pnl_MenuModulo: TPanel
       Left = 1
       Top = 49
-      Width = 128
-      Height = 585
+      Width = 408
+      Height = 673
       Align = alLeft
       Caption = 'Pnl_MenuModulo'
-      Padding.Left = 10
       Padding.Top = 10
-      Padding.Right = 10
-      Padding.Bottom = 10
       TabOrder = 1
-      object Button1: TButton
-        Left = 0
-        Top = 32
-        Width = 75
-        Height = 25
-        Caption = 'Button1'
-        TabOrder = 0
-        OnClick = Button1Click
-      end
-      object Button2: TButton
-        Left = 16
-        Top = 328
-        Width = 75
-        Height = 25
-        Caption = 'Button2'
-        TabOrder = 1
-        OnClick = Button2Click
-      end
-      object Button3: TButton
-        Left = 16
-        Top = 384
-        Width = 75
-        Height = 25
-        Caption = 'Button2'
-        TabOrder = 2
-      end
     end
     object Pnl_View: TPanel
-      Left = 129
+      Left = 409
       Top = 49
-      Width = 1064
-      Height = 585
+      Width = 784
+      Height = 673
       Align = alClient
       Caption = 'Pnl_View'
       TabOrder = 2
+      ExplicitLeft = 273
+      ExplicitTop = 55
       object Pnl_SubMenu: TPanel
         Left = 1
         Top = 1
-        Width = 128
-        Height = 583
+        Width = 280
+        Height = 671
         Align = alLeft
         Caption = 'Pnl_SubMenuModulo'
-        Padding.Left = 10
-        Padding.Top = 10
-        Padding.Right = 10
-        Padding.Bottom = 10
         TabOrder = 0
-        Visible = False
       end
     end
   end

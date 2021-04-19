@@ -20,6 +20,7 @@ uses
   //
   umdclasse,
   //  Controller
+  ModuloSistema.controller.servidor.erpnfe,
   TabelaBanco.controller.servidor.erpnfe,
   DominioBanco.controller.servidor.erpnfe;
 
@@ -81,13 +82,13 @@ begin
   Comum.lib.erpnfe.ConfiguracaoConexaoBanco := TConfiguracaoConexaoBanco.New;
   Comum.lib.erpnfe.ConfiguracaoConexaoBanco.obterDadosConexao('D:\ServidorErpNfeHorse', 'ServidorErpNFe.ini');
 
-  ServidorHorse.Use(HorseBasicAuthentication(
+{  ServidorHorse.Use(HorseBasicAuthentication(
     function(const AUsername, APassword: string): Boolean
     begin
        Comum.lib.erpnfe.NomeUsuario :=  AUsername;
        Comum.lib.erpnfe.SenhaUsuario :=  APassword;
        result := true;
-    end));
+    end));  }
 
   ServidorHorse.Use(Jhonson);
   ServidorHorse.Use(HandleException);
@@ -98,8 +99,10 @@ begin
     begin
       Res.Send('pong');
     end);
+
   DominioBanco.controller.servidor.erpnfe.Registry(ServidorHorse);
   TabelaBanco.controller.servidor.erpnfe.Registry(ServidorHorse);
+  ModuloSistema.controller.servidor.erpnfe.Registry(ServidorHorse);
 
   ServidorHorse.Listen(9000);
 end;

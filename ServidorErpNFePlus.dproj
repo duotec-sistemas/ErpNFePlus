@@ -108,16 +108,6 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="src\dao\DominioBanco.dao.servidor.erpnfe.pas">
-            <Form>DominioBancoDao</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="src\dao\TabelaBanco.dao.servidor.erpnfe.pas">
-            <Form>TabelaBancoDao</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="src\entidade\CamposTabela.entidade.erpnfe.pas"/>
         <DCCReference Include="src\entidade\DominioBanco.entidade.erpnfe.pas"/>
         <DCCReference Include="src\entidade\TabelaBanco.entidade.erpnfe.pas"/>
@@ -138,6 +128,22 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="src\entidade\heranca\Pai.entidade.erpnfe.pas"/>
+        <DCCReference Include="src\controller\ModuloSistema.controller.servidor.erpnfe.pas"/>
+        <DCCReference Include="src\dao\DominioBanco.dao.servidor.erpnfe.pas">
+            <Form>DominioBancoDao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\dao\TabelaBanco.dao.servidor.erpnfe.pas">
+            <Form>TabelaBancoDao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\dao\ModuloSistema.dao.servidor.erpnfe.pas">
+            <Form>ModuloSistemaDao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

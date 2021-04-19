@@ -5,8 +5,6 @@ uses
   DominioBanco.controller.servidor.erpnfe in 'src\controller\DominioBanco.controller.servidor.erpnfe.pas',
   TabelaBanco.controller.servidor.erpnfe in 'src\controller\TabelaBanco.controller.servidor.erpnfe.pas',
   dao.servidor.erpnfe in 'src\dao\heranca\dao.servidor.erpnfe.pas' {ServidorDao: TDataModule},
-  DominioBanco.dao.servidor.erpnfe in 'src\dao\DominioBanco.dao.servidor.erpnfe.pas' {DominioBancoDao: TDataModule},
-  TabelaBanco.dao.servidor.erpnfe in 'src\dao\TabelaBanco.dao.servidor.erpnfe.pas' {TabelaBancoDao: TDataModule},
   CamposTabela.entidade.erpnfe in 'src\entidade\CamposTabela.entidade.erpnfe.pas',
   DominioBanco.entidade.erpnfe in 'src\entidade\DominioBanco.entidade.erpnfe.pas',
   TabelaBanco.entidade.erpnfe in 'src\entidade\TabelaBanco.entidade.erpnfe.pas',
@@ -16,7 +14,11 @@ uses
   TesteEntidade.view.erpnfe in 'src\testes\TesteEntidade.view.erpnfe.pas' {Form3},
   Main.view.servidor.erpnfe in 'src\view\Main.view.servidor.erpnfe.pas' {Frm_Main},
   umdclasse in 'src\view\umdclasse.pas' {DM_Classe: TDataModule},
-  Pai.entidade.erpnfe in 'src\entidade\heranca\Pai.entidade.erpnfe.pas';
+  Pai.entidade.erpnfe in 'src\entidade\heranca\Pai.entidade.erpnfe.pas',
+  ModuloSistema.controller.servidor.erpnfe in 'src\controller\ModuloSistema.controller.servidor.erpnfe.pas',
+  DominioBanco.dao.servidor.erpnfe in 'src\dao\DominioBanco.dao.servidor.erpnfe.pas' {DominioBancoDao: TDataModule},
+  TabelaBanco.dao.servidor.erpnfe in 'src\dao\TabelaBanco.dao.servidor.erpnfe.pas' {TabelaBancoDao: TDataModule},
+  ModuloSistema.dao.servidor.erpnfe in 'src\dao\ModuloSistema.dao.servidor.erpnfe.pas' {ModuloSistemaDao: TDataModule};
 
 {$R *.res}
 

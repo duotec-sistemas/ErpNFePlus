@@ -9,7 +9,8 @@ uses
   ViewDll.lib in 'src\lib\ViewDll.lib.pas',
   Conexao.SQLite.dao.clent.erpnfe in 'src\dao\Conexao.SQLite.dao.clent.erpnfe.pas' {ConexaoSQLLite: TDataModule},
   Template.view.client.erpnfe in 'src\view\Template.view.client.erpnfe.pas' {View_Template},
-  ViewBpl.lib in 'src\lib\ViewBpl.lib.pas';
+  ViewBpl.lib in 'src\lib\ViewBpl.lib.pas',
+  OpcaoMenu.lib.erpnfe in 'src\lib\visuais\OpcaoMenu.lib.erpnfe.pas';
 
 {$R *.res}
 
