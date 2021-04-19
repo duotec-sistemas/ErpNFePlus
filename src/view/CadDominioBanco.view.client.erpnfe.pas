@@ -7,14 +7,18 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   TemplateCadastro.view.client.erpnfe,
-  Vcl.WinXPanels, Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Vcl.WinXPanels, Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
+  Vcl.Mask, Vcl.DBCtrls;
 
 type
   TView_CadDominio = class(TView_TemplateCadastro)
     Panel2: TPanel;
-    Panel3: TPanel;
     Panel4: TPanel;
     DBGrid1: TDBGrid;
+    ScrollBox1: TScrollBox;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Panel1: TPanel;
   private
     { Private declarations }
   public
@@ -22,16 +26,16 @@ type
   end;
 
 implementation
-
-function ObterFormClass(value: String) : TFormClass;
+function GetClassForm : TFormClass;
 begin
   result := TView_CadDominio;
 end;
 
 exports
-  ObterFormClass;
+  GetClassForm;
 
 {$R *.dfm}
+
 
 
 end.

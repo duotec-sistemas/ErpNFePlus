@@ -12,13 +12,13 @@
         <Projects Include="ClientFMXErpNfe.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Packages\CadDominioBanco\CadDominioBanco.dproj">
+        <Projects Include="Packages\CoreErpNFe\CoreErpNfe.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Packages\CadTabelaBanco\CadTabelaBanco.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Packages\CoreErpNFe\CoreErpNfe.dproj">
+        <Projects Include="Packages\CadDominioBanco\CadDominioBanco.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -56,14 +56,14 @@
     <Target Name="ClientFMXErpNfe:Make">
         <MSBuild Projects="ClientFMXErpNfe.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CadDominioBanco">
-        <MSBuild Projects="Packages\CadDominioBanco\CadDominioBanco.dproj"/>
+    <Target Name="CoreErpNfe">
+        <MSBuild Projects="Packages\CoreErpNFe\CoreErpNfe.dproj"/>
     </Target>
-    <Target Name="CadDominioBanco:Clean">
-        <MSBuild Projects="Packages\CadDominioBanco\CadDominioBanco.dproj" Targets="Clean"/>
+    <Target Name="CoreErpNfe:Clean">
+        <MSBuild Projects="Packages\CoreErpNFe\CoreErpNfe.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="CadDominioBanco:Make">
-        <MSBuild Projects="Packages\CadDominioBanco\CadDominioBanco.dproj" Targets="Make"/>
+    <Target Name="CoreErpNfe:Make">
+        <MSBuild Projects="Packages\CoreErpNFe\CoreErpNfe.dproj" Targets="Make"/>
     </Target>
     <Target Name="CadTabelaBanco">
         <MSBuild Projects="Packages\CadTabelaBanco\CadTabelaBanco.dproj"/>
@@ -74,23 +74,23 @@
     <Target Name="CadTabelaBanco:Make">
         <MSBuild Projects="Packages\CadTabelaBanco\CadTabelaBanco.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CoreErpNfe">
-        <MSBuild Projects="Packages\CoreErpNFe\CoreErpNfe.dproj"/>
+    <Target Name="CadDominioBanco">
+        <MSBuild Projects="Packages\CadDominioBanco\CadDominioBanco.dproj"/>
     </Target>
-    <Target Name="CoreErpNfe:Clean">
-        <MSBuild Projects="Packages\CoreErpNFe\CoreErpNfe.dproj" Targets="Clean"/>
+    <Target Name="CadDominioBanco:Clean">
+        <MSBuild Projects="Packages\CadDominioBanco\CadDominioBanco.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="CoreErpNfe:Make">
-        <MSBuild Projects="Packages\CoreErpNFe\CoreErpNfe.dproj" Targets="Make"/>
+    <Target Name="CadDominioBanco:Make">
+        <MSBuild Projects="Packages\CadDominioBanco\CadDominioBanco.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="ServidorErpNFePlus;ClientErpNFePlus;ClientFMXErpNfe;CadDominioBanco;CadTabelaBanco;CoreErpNfe"/>
+        <CallTarget Targets="ServidorErpNFePlus;ClientErpNFePlus;ClientFMXErpNfe;CoreErpNfe;CadTabelaBanco;CadDominioBanco"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ServidorErpNFePlus:Clean;ClientErpNFePlus:Clean;ClientFMXErpNfe:Clean;CadDominioBanco:Clean;CadTabelaBanco:Clean;CoreErpNfe:Clean"/>
+        <CallTarget Targets="ServidorErpNFePlus:Clean;ClientErpNFePlus:Clean;ClientFMXErpNfe:Clean;CoreErpNfe:Clean;CadTabelaBanco:Clean;CadDominioBanco:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ServidorErpNFePlus:Make;ClientErpNFePlus:Make;ClientFMXErpNfe:Make;CadDominioBanco:Make;CadTabelaBanco:Make;CoreErpNfe:Make"/>
+        <CallTarget Targets="ServidorErpNFePlus:Make;ClientErpNFePlus:Make;ClientFMXErpNfe:Make;CoreErpNfe:Make;CadTabelaBanco:Make;CadDominioBanco:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -1,4 +1,4 @@
-unit ViewDll.lib;
+unit ViewBpl.lib;
 
 interface
 
@@ -6,17 +6,16 @@ uses
   Vcl.Forms, System.SysUtils, Winapi.Windows;
 
 Type
-  TViewDll = class
-    class function ObterClasseViewDll(const pNomeDll: String): TFormClass;
+  TViewBpl = class
+    class function ObterClasseViewBpl(const pNomeBpl: String): TFormClass;
   end;
 
 implementation
 
 { TDllView }
 
-{ TViewDll }
 
-class function TViewDll.ObterClasseViewDll(const pNomeDll: String): TFormClass;
+class function TViewBpl.ObterClasseViewBpl(const pNomeBpl: String): TFormClass;
 
 var
   MinhaPackage: HModule;
@@ -25,16 +24,16 @@ var
 begin
   result := nil;
 
-  ArquivoDll := ExtractFilePath(ParamStr(0)) + 'dll\'+pNomeDll;
+  ArquivoDll := ExtractFilePath(ParamStr(0)) + 'bpl\'+pNomeBpl;
 
   MinhaPackage := LoadLibrary(PWideChar(ArquivoDll));
 
   if MinhaPackage <> 0 then
   begin
-    @FuncaoExecutar := GetProcAddress(MinhaPackage, 'ObterFormClass');
+    @FuncaoExecutar := GetProcAddress(MinhaPackage, 'GetFormClass');
     if Assigned(FuncaoExecutar) then
     begin
-      result := FuncaoExecutar(pNomeDll);
+      result := FuncaoExecutar(pNomeBpl);
     end
   end;
 

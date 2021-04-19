@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, EstiloAplicacao.lib.erpnfe,
   Vcl.StdCtrls, Vcl.Buttons,
   System.Generics.Collections,
-  Container.lib.erpnfe;
+  Container.lib.erpnfe,
+  Conexao.SQLite.dao.clent.erpnfe;
 
 type
   TView_Main = class(TForm)
@@ -23,19 +24,24 @@ type
     Pnl_SubMenu: TPanel;
     Button2: TButton;
     Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
 
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
     ListaFormulario: TDictionary<String, TForm>;
     ViewAtual: TForm;
     procedure MostrarView(view: TForm);
     procedure AplicarEstilo;
-    procedure CarregarDll(pNomeDll: String);
-    procedure ExecutarPrograma(pNomeDll  : String);
+    procedure ConectarBancoLocal;
+    procedure ExecutarPrograma(PNomeBpl  : String);
   public
     { Public declarations }
 
@@ -43,12 +49,13 @@ type
 
 var
   View_Main: TView_Main;
+  ConexaoSQLLite: TConexaoSQLLite;
 
 implementation
 
 {$R *.dfm}
 
-uses ViewDll.lib;
+uses ViewBpl.lib;
 
 { TView_Main }
 
@@ -100,59 +107,84 @@ end;
 
 procedure TView_Main.Button1Click(Sender: TObject);
 begin
-  ExecutarPrograma('aCadDominioBanco.dll');
+  ExecutarPrograma('CadDominioBanco.dll');
 end;
 
-procedure TView_Main.CarregarDll(pNomeDll: String);
-{var
-  MinhaPackage: HModule;
-  FuncaoExecutar: function(value: String): IForm;
-  view: TForm;
-  ClasseView: IForm;
-  Classe: TFormClass;
-  ArquivoDll: String;  }
+procedure TView_Main.Button2Click(Sender: TObject);
 begin
+   ExecutarPrograma('CadTabelaBanco.dll');
+end;
 
- { view := nil;
-  ListaFormulario.TryGetValue(pNomeDll, view);
 
-  if Assigned(view) then
-  begin
-    if view.Caption = ViewAtual.Caption then
-      Exit;
-    MostrarView(view);
-    Exit
-  end;
-  ArquivoDll := ExtractFilePath(ParamStr(0)) + pNomeDll;
-  MinhaPackage := LoadLibrary(PWideChar(ArquivoDll));
+procedure TView_Main.Button4Click(Sender: TObject);
+
+var
+  MinhaPackage: HModule;
+  FuncaoExecutar: function: TFormClass;
+  ArquivoDll: String;
+  Classe: TFormClass;
+  View: TForm;
+begin
+  ArquivoDll := ExtractFilePath(ParamStr(0)) + 'bpl\CadDominioBanco.bpl';
+  MinhaPackage := LoadPackage(PWideChar(ArquivoDll));
 
   if MinhaPackage <> 0 then
   begin
-    @FuncaoExecutar := GetProcAddress(MinhaPackage, 'ObterInstanciaView');
+    @FuncaoExecutar := GetProcAddress(MinhaPackage, 'GetClassForm');
     if Assigned(FuncaoExecutar) then
     begin
-      ClasseView := FuncaoExecutar(pNomeDll);
-      Classe := TFormClass(GetClass('TView_CadDominio'));
-
-      Classe := ClasseView.Getform;
-      view := Classe.Create(nil);
-
-      view.Caption := pNomeDll;
-      ViewAtual := view;
-      ListaFormulario.Add(pNomeDll, view);
-      MostrarView(view);
+      Classe := FuncaoExecutar;
+      View := Classe.Create(nil);
+      Winapi.Windows.SetParent(View.Handle, Pnl_View.Handle);
+      View.WindowState := wsMaximized;
+      View.Align := alClient;
+      View.BorderStyle := bsNone;
+      View.Show;
     end
-  end;  }
+  end;
+
 end;
 
-procedure TView_Main.ExecutarPrograma(pNomeDll: String);
+procedure TView_Main.Button5Click(Sender: TObject);
+var
+  MinhaPackage: HModule;
+  FuncaoExecutar: function: TFormClass;
+  ArquivoDll: String;
+  Classe: TFormClass;
+  View: TForm;
+begin
+  ArquivoDll := ExtractFilePath(ParamStr(0)) + 'bpl\CadTabelaBanco.bpl';
+  MinhaPackage := LoadPackage(PWideChar(ArquivoDll));
+
+  if MinhaPackage <> 0 then
+  begin
+    @FuncaoExecutar := GetProcAddress(MinhaPackage, 'GetClassForm');
+    if Assigned(FuncaoExecutar) then
+    begin
+      Classe := FuncaoExecutar;
+      View := Classe.Create(nil);
+      Winapi.Windows.SetParent(View.Handle, Pnl_View.Handle);
+      View.WindowState := wsMaximized;
+      View.Align := alClient;
+      View.BorderStyle := bsNone;
+      View.Show;
+    end
+  end;
+end;
+
+procedure TView_Main.ConectarBancoLocal;
+begin
+  ConexaoSQLLite.FDconexao.Connected := true;
+end;
+
+procedure TView_Main.ExecutarPrograma(PNomeBpl: String);
 var
   Classe: TFormClass;
   LView  : TForm;
 begin
 
   LView := nil;
-  ListaFormulario.TryGetValue(pNomeDll, LView);
+  ListaFormulario.TryGetValue(PNomeBpl, LView);
 
   if Assigned(LView) then
   begin
@@ -161,13 +193,13 @@ begin
     MostrarView(LView);
     Exit
   end;
-  Classe := TViewDll.ObterClasseView(pNomeDll);
+  Classe := TViewBpl.ObterClasseViewBpl(PNomeBpl);
   if Classe <> Nil  then
   begin
       LView := Classe.Create(nil);
-      LView.Caption := pNomeDll;
+      LView.Caption := PNomeBpl;
       ViewAtual := LView;
-      ListaFormulario.Add(pNomeDll, LView);
+      ListaFormulario.Add(PNomeBpl, LView);
       MostrarView(LView);
   end;
 end;
@@ -177,6 +209,8 @@ begin
   AplicarEstilo;
   DM_Container := TDM_Container.Create(Application);
   ListaFormulario := TDictionary<String, TForm>.Create;
+  ConectarBancoLocal;
+
 end;
 
 procedure TView_Main.FormDestroy(Sender: TObject);
@@ -194,11 +228,14 @@ begin
   Winapi.Windows.SetParent(view.Handle, Pnl_View.Handle);
   view.WindowState := wsMaximized;
   view.BorderStyle := bsNone;
+  view.Align := alClient;
   view.Show;
+  Pnl_View.Update;
+  View.SetFocus;
 end;
 
 initialization
-
 ReportMemoryLeaksOnShutdown := true;
+ConexaoSQLLite := TConexaoSQLLite.Create(Application);
 
-end.
+end.'

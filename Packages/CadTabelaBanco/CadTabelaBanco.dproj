@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{538CF559-BAAA-423E-9E81-FEBD520D1044}</ProjectGuid>
+        <ProjectGuid>{F7766F54-A4FD-4BE6-BB64-BEFDC874920F}</ProjectGuid>
         <MainSource>CadTabelaBanco.dpk</MainSource>
         <ProjectVersion>19.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
@@ -13,13 +13,18 @@
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
-        <Base_Win32>true</Base_Win32>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
-        <Base_Win64>true</Base_Win64>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -54,20 +59,18 @@
         <SanitizedProjectName>CadTabelaBanco</SanitizedProjectName>
         <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <DCC_CBuilderOutput>None</DCC_CBuilderOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <DCC_CBuilderOutput>None</DCC_CBuilderOutput>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_BplOutput>..\..\bin</DCC_BplOutput>
-        <DCC_DcpOutput>..\dcp</DCC_DcpOutput>
-        <DCC_DcuOutput>..\dcu</DCC_DcuOutput>
-        <DCC_UnitSearchPath>D:\Delphi_xe_10_4\duotec-sistemas\ErpNFePlus\src\view;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-        <DCC_UsePackage>vcl;rtl;vclwinx;CoreErpNfe;$(DCC_UsePackage)</DCC_UsePackage>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>vcl;rtl;vclwinx;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -79,9 +82,11 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <DCC_DcpOutput>D:\Delphi_xe_10_4\duotec-sistemas\ErpNFePlus\Packages\DCP\</DCC_DcpOutput>
+        <DCC_BplOutput>D:\Delphi_xe_10_4\duotec-sistemas\ErpNFePlus\bin\bpl</DCC_BplOutput>
+        <DCC_DcuOutput>D:\Delphi_xe_10_4\duotec-sistemas\ErpNFePlus\Packages\DCU\</DCC_DcuOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UnitSearchPath>D:\Delphi_xe_10_4\duotec-sistemas\ErpNFePlus\src\view;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -94,9 +99,9 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="vcl.dcp"/>
         <DCCReference Include="CoreErpNfe.dcp"/>
-        <DCCReference Include="vclwinx.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="vcldb.dcp"/>
         <DCCReference Include="..\..\src\view\CadTabelaBanco.view.client.erpnfe.pas">
             <Form>View_CadTabelaBanco</Form>
             <FormType>dfm</FormType>
@@ -122,6 +127,7 @@
                     <Source Name="MainSource">CadTabelaBanco.dpk</Source>
                 </Source>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="D:\Delphi_xe_10_4\duotec-sistemas\ErpNFePlus\bin\CoreErpNfe.bpl">(untitled)</Excluded_Packages>
                     <Excluded_Packages Name="C:\DelphiComponentes\Nova pasta\FastReport 6 VCL Enterprise\LibD27\dclfrxADO27.bpl">File C:\DelphiComponentes\Nova pasta\FastReport 6 VCL Enterprise\LibD27\dclfrxADO27.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="C:\DelphiComponentes\Nova pasta\FastReport 6 VCL Enterprise\LibD27\dclfsADO27.bpl">File C:\DelphiComponentes\Nova pasta\FastReport 6 VCL Enterprise\LibD27\dclfsADO27.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="C:\DelphiComponentes\Nova pasta\FastReport 6 VCL Enterprise\LibD27\dclfrxDBX27.bpl">File C:\DelphiComponentes\Nova pasta\FastReport 6 VCL Enterprise\LibD27\dclfrxDBX27.bpl not found</Excluded_Packages>
@@ -134,12 +140,6 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="..\..\bin\CadTabelaBanco.bpl" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>CadTabelaBanco.bpl</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
@@ -152,6 +152,12 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\bin\bpl\CadTabelaBanco.bpl" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>CadTabelaBanco.bpl</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -839,6 +845,8 @@
                 <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>

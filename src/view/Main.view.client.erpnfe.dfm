@@ -70,6 +70,24 @@ object View_Main: TView_Main
         Caption = 'Pnl_Logo'
         TabOrder = 1
       end
+      object Button4: TButton
+        Left = 872
+        Top = 12
+        Width = 75
+        Height = 25
+        Caption = 'Button4'
+        TabOrder = 2
+        OnClick = Button4Click
+      end
+      object Button5: TButton
+        Left = 1048
+        Top = 16
+        Width = 75
+        Height = 25
+        Caption = 'Button5'
+        TabOrder = 3
+        OnClick = Button5Click
+      end
     end
     object Pnl_MenuModulo: TPanel
       Left = 1
@@ -84,8 +102,8 @@ object View_Main: TView_Main
       Padding.Bottom = 10
       TabOrder = 1
       object Button1: TButton
-        Left = 48
-        Top = 48
+        Left = 0
+        Top = 32
         Width = 75
         Height = 25
         Caption = 'Button1'
@@ -99,6 +117,7 @@ object View_Main: TView_Main
         Height = 25
         Caption = 'Button2'
         TabOrder = 1
+        OnClick = Button2Click
       end
       object Button3: TButton
         Left = 16
@@ -129,6 +148,7 @@ object View_Main: TView_Main
         Padding.Right = 10
         Padding.Bottom = 10
         TabOrder = 0
+        Visible = False
       end
     end
   end

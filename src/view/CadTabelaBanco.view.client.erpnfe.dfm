@@ -5,10 +5,14 @@ inherited View_CadTabelaBanco: TView_CadTabelaBanco
   TextHeight = 13
   inherited CardPanel1: TCardPanel
     TabOrder = 1
+    inherited Crd_Pesquisa: TCard
+      ExplicitWidth = 602
+      ExplicitHeight = 384
+    end
   end
   object Edit1: TEdit
-    Left = 184
-    Top = 136
+    Left = 160
+    Top = 120
     Width = 121
     Height = 21
     TabOrder = 0

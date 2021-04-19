@@ -1,4 +1,4 @@
-library CadDominioBanco;
+library CadModeloDll;
 
 { Important note about DLL memory management: ShareMem must be the
   first unit in your library's USES clause AND your project's (select
@@ -13,7 +13,9 @@ library CadDominioBanco;
 uses
   System.SysUtils,
   System.Classes,
-  CadDominioBanco.view.client.erpnfe in '..\..\src\view\CadDominioBanco.view.client.erpnfe.pas' {View_CadDominio};
+  Template.view.client.erpnfe in '..\..\src\view\Template.view.client.erpnfe.pas' {View_Template},
+  TemplateCadastro.view.client.erpnfe in '..\..\src\view\TemplateCadastro.view.client.erpnfe.pas' {View_TemplateCadastro},
+  CadModelDll.view.client.erpnfe in '..\..\src\view\CadModelDll.view.client.erpnfe.pas' {View_TemplateCadastro1};
 
 {$R *.res}
 

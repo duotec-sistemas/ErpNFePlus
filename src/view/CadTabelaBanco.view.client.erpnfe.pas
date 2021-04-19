@@ -21,20 +21,21 @@ type
 
 implementation
 
-function ObterInstanciaView(value: String): TFormClass;
+function GetClassForm: TFormClass;
 begin
   result := TView_CadTabelaBanco;
 end;
 
 exports
-  ObterInstanciaView;
+  GetClassForm;
 
 {$R *.dfm}
-initialization
-RegisterClass(TView_CadTabelaBanco);
 
-finalization
-UnRegisterClass(TView_CadTabelaBanco);
+
+
+
+
+
 
 
 end.

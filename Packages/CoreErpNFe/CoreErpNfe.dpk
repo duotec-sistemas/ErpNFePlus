@@ -25,11 +25,16 @@ package CoreErpNfe;
 {$IMAGEBASE $400000}
 {$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
 {$IMPLICITBUILD ON}
 
 requires
   rtl,
   vcl,
   vclwinx;
+
+contains
+  Template.view.client.erpnfe in '..\..\src\view\Template.view.client.erpnfe.pas' {View_Template},
+  TemplateCadastro.view.client.erpnfe in '..\..\src\view\TemplateCadastro.view.client.erpnfe.pas' {View_TemplateCadastro};
 
 end.

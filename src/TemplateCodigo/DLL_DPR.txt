@@ -1,4 +1,4 @@
-library CadDominioBanco;
+library |NomePr;
 
 { Important note about DLL memory management: ShareMem must be the
   first unit in your library's USES clause AND your project's (select
@@ -13,7 +13,7 @@ library CadDominioBanco;
 uses
   System.SysUtils,
   System.Classes,
-  CadDominioBanco.view.client.erpnfe in '..\..\src\view\CadDominioBanco.view.client.erpnfe.pas' {View_CadDominio};
+  |NomeArquivoPasUnit| in '..\..\src\view\NomeArquivoPasUnit.pas' |Nome Class Unit|};
 
 {$R *.res}
 
@@ -22,3 +22,17 @@ begin
 
 
 end.
+
+
+
+
+Todo Formulario depois do Implementation
+
+
+function ObterFormClass(value: String) : TFormClass;
+begin
+  result := |Nome Classe Retorno|
+end;
+
+exports
+  ObterFormClass;

@@ -30,9 +30,9 @@ package CadTabelaBanco;
 
 requires
   rtl,
-  vcl,
   CoreErpNfe,
-  vclwinx;
+  dbrtl,
+  vcldb;
 
 contains
   CadTabelaBanco.view.client.erpnfe in '..\..\src\view\CadTabelaBanco.view.client.erpnfe.pas' {View_CadTabelaBanco};
