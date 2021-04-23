@@ -33,6 +33,7 @@ type
     FTpRequisicao: TMethodType;
     FConexao : iConexaoBancoModel;
     procedure SetTpRequisicao(const Value: TMethodType);
+
     { Private declarations }
 
   protected
@@ -42,6 +43,9 @@ type
     procedure IniciarTransacao;
     procedure ComitarTransacao;
     procedure CancelarTransacao;
+
+    //
+    function GetDtBase : TDateTime;
 
   public
     { Public declarations }
@@ -59,6 +63,9 @@ type
   end;
 
 implementation
+
+uses
+  System.DateUtils;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
@@ -153,6 +160,11 @@ begin
   FDConexao.DriverName := 'FB';
 
 
+end;
+
+function TServidorDao.GetDtBase: TDateTime;
+begin
+  result := EncodeDate(1899,01,31);
 end;
 
 function TServidorDao.Gravar(pId: String; pJson : TJsonObject): TFDQuery;

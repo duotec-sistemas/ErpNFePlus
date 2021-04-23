@@ -21,6 +21,9 @@
         <Projects Include="Packages\CadDominioBanco\CadDominioBanco.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="PDVErpNfe.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -83,14 +86,23 @@
     <Target Name="CadDominioBanco:Make">
         <MSBuild Projects="Packages\CadDominioBanco\CadDominioBanco.dproj" Targets="Make"/>
     </Target>
+    <Target Name="PDVErpNfe">
+        <MSBuild Projects="PDVErpNfe.dproj"/>
+    </Target>
+    <Target Name="PDVErpNfe:Clean">
+        <MSBuild Projects="PDVErpNfe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PDVErpNfe:Make">
+        <MSBuild Projects="PDVErpNfe.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ServidorErpNFePlus;ClientErpNFePlus;ClientFMXErpNfe;CoreErpNfe;CadTabelaBanco;CadDominioBanco"/>
+        <CallTarget Targets="ServidorErpNFePlus;ClientErpNFePlus;ClientFMXErpNfe;CoreErpNfe;CadTabelaBanco;CadDominioBanco;PDVErpNfe"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ServidorErpNFePlus:Clean;ClientErpNFePlus:Clean;ClientFMXErpNfe:Clean;CoreErpNfe:Clean;CadTabelaBanco:Clean;CadDominioBanco:Clean"/>
+        <CallTarget Targets="ServidorErpNFePlus:Clean;ClientErpNFePlus:Clean;ClientFMXErpNfe:Clean;CoreErpNfe:Clean;CadTabelaBanco:Clean;CadDominioBanco:Clean;PDVErpNfe:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ServidorErpNFePlus:Make;ClientErpNFePlus:Make;ClientFMXErpNfe:Make;CoreErpNfe:Make;CadTabelaBanco:Make;CadDominioBanco:Make"/>
+        <CallTarget Targets="ServidorErpNFePlus:Make;ClientErpNFePlus:Make;ClientFMXErpNfe:Make;CoreErpNfe:Make;CadTabelaBanco:Make;CadDominioBanco:Make;PDVErpNfe:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

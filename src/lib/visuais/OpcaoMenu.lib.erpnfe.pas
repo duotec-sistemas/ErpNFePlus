@@ -50,7 +50,7 @@ begin
   //
   //
   FPnlOpcao := TPanel.Create(nil);
-  FPnlOpcao.Height := 48;
+  FPnlOpcao.Height := 32;
   FPnlOpcao.ParentBackground := False;
   FPnlOpcao.Align := alTop;
   FPnlOpcao.ParentColor := False;
@@ -59,12 +59,18 @@ begin
   FPnlOpcao.Parent := PAOwner;
   FPnlOpcao.BevelOuter := bvNone;
   FPnlOpcao.AlignWithMargins := true;
+  FPnlOpcao.Margins.Bottom := 0;
+  FPnlOpcao.Margins.Left := 0;
+  FPnlOpcao.Margins.Right := 0;
+  FPnlOpcao.Margins.Top := 2;
+
+
   FPnlOpcao.Name := 'FPnlOpcao_'+PNomeModulo;
   FPnlOpcao.OnMouseEnter := EnterPanel;
   FPnlOpcao.OnMouseLeave := ExitPanel;
   //
   FPnlBarra := TPanel.Create(nil);
-  FPnlBarra.Height := 48;
+  FPnlBarra.Height := FPnlOpcao.Height;
   FPnlBarra.ParentBackground := False;
   FPnlBarra.ParentColor := False;
   FPnlBarra.Width:= 5;
@@ -77,7 +83,7 @@ begin
 FPnlBarra.Visible := false;
   //
   FPnlTituloOpcao := TPanel.Create(nil);
-  FPnlTituloOpcao.Height := 48;
+  FPnlTituloOpcao.Height := FPnlOpcao.Height;
   FPnlTituloOpcao.ParentBackground := False;
   FPnlTituloOpcao.Align := alClient;
   FPnlTituloOpcao.ParentColor := False;

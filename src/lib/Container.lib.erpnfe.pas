@@ -14,8 +14,13 @@ type
     { Public declarations }
   end;
 
+Const
+  _EMPGRP = '01';
+
 var
   DM_Container: TDM_Container;
+
+
 
 implementation
 
