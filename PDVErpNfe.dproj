@@ -133,13 +133,30 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="src\view\PDVCheckout.client.erpnfe.pas">
-            <Form>Form1</Form>
+            <Form>View_CheckOut</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\view\Main1PDV.view.client.erpnfe.pas">
-            <Form>Form2</Form>
+            <Form>View_PDVAzul</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\view\PDVAlterarVendedor.client.erpnfe.pas">
+            <Form>View_AlterarVendedor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\PDVConfiguracaoDispositivo.view.client.erpnfe.pas">
+            <Form>View_ConfiguracaoDispositivo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\PDVAlterarQuantidade.client.erpnfe.pas">
+            <Form>View_AlterarQuantidade</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\PDVConfiguracaoUsuario.client.erpnfe.pas">
+            <Form>View_ConfiguracaoUsuario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\lib\Estilo.lib.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

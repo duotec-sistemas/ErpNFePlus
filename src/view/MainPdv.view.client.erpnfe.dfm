@@ -5,7 +5,7 @@ object View_PDV: TView_PDV
   Caption = 'View_PDV'
   ClientHeight = 800
   ClientWidth = 1024
-  Color = clBtnFace
+  Color = clBlack
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -19
@@ -23,7 +23,6 @@ object View_PDV: TView_PDV
     Top = 0
     Width = 1024
     Height = 800
-    Align = alClient
     BevelOuter = bvNone
     Color = 14866643
     Padding.Left = 5
@@ -55,9 +54,6 @@ object View_PDV: TView_PDV
         Color = 9538183
         ParentBackground = False
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 95
-        ExplicitWidth = 982
       end
       object Pnl_Central: TPanel
         AlignWithMargins = True
@@ -70,10 +66,6 @@ object View_PDV: TView_PDV
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 1
-        ExplicitLeft = 16
-        ExplicitTop = 223
-        ExplicitWidth = 982
-        ExplicitHeight = 408
         object Pnl_ProdutosVendidos: TPanel
           Left = 293
           Top = 0
@@ -82,8 +74,6 @@ object View_PDV: TView_PDV
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitWidth = 689
-          ExplicitHeight = 408
           object DBGrid1: TDBGrid
             AlignWithMargins = True
             Left = 8
@@ -163,7 +153,6 @@ object View_PDV: TView_PDV
           Align = alLeft
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitHeight = 402
           object Label1: TLabel
             AlignWithMargins = True
             Left = 3
@@ -339,9 +328,6 @@ object View_PDV: TView_PDV
         Color = clWhite
         ParentBackground = False
         TabOrder = 2
-        ExplicitLeft = 16
-        ExplicitTop = 637
-        ExplicitWidth = 982
         object Panel2: TPanel
           Left = 586
           Top = 0
@@ -350,7 +336,6 @@ object View_PDV: TView_PDV
           Align = alRight
           BevelOuter = bvNone
           TabOrder = 0
-          ExplicitLeft = 584
           object Label22: TLabel
             Left = 0
             Top = 0
@@ -454,7 +439,6 @@ object View_PDV: TView_PDV
               Value = 50.000000000000000000
             end>
           TabOrder = 1
-          ExplicitWidth = 584
           object Panel3: TPanel
             Left = 0
             Top = 0
@@ -506,7 +490,6 @@ object View_PDV: TView_PDV
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitWidth = 146
             object Label8: TLabel
               Left = 0
               Top = 0
@@ -538,7 +521,6 @@ object View_PDV: TView_PDV
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 2
-            ExplicitLeft = 292
             object Btn_PreVenda1: TLabel
               Left = 0
               Top = 0
@@ -572,8 +554,6 @@ object View_PDV: TView_PDV
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 3
-            ExplicitLeft = 438
-            ExplicitWidth = 146
             object Label12: TLabel
               Left = 0
               Top = 0
@@ -636,7 +616,6 @@ object View_PDV: TView_PDV
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 5
-            ExplicitWidth = 146
             object Label16: TLabel
               Left = 0
               Top = 0
@@ -645,6 +624,7 @@ object View_PDV: TView_PDV
               Align = alTop
               Alignment = taCenter
               Caption = 'F5'
+              OnClick = Label16Click
               ExplicitWidth = 19
             end
             object Label17: TLabel
@@ -668,7 +648,6 @@ object View_PDV: TView_PDV
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 6
-            ExplicitLeft = 292
             object Label18: TLabel
               Left = 0
               Top = 0
@@ -700,8 +679,6 @@ object View_PDV: TView_PDV
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 7
-            ExplicitLeft = 438
-            ExplicitWidth = 146
             object Label20: TLabel
               Left = 0
               Top = 0
@@ -739,9 +716,6 @@ object View_PDV: TView_PDV
         Color = 6445918
         ParentBackground = False
         TabOrder = 3
-        ExplicitLeft = 16
-        ExplicitTop = 4
-        ExplicitWidth = 982
       end
       object Pnl_DescricaoProduto: TPanel
         AlignWithMargins = True
@@ -756,14 +730,11 @@ object View_PDV: TView_PDV
         Color = 12432569
         ParentBackground = False
         TabOrder = 4
-        ExplicitLeft = 16
-        ExplicitTop = 154
-        ExplicitWidth = 982
       end
     end
   end
   object DtSrc_Produto: TDataSource
-    Left = 570
-    Top = 172
+    Left = 114
+    Top = 164
   end
 end

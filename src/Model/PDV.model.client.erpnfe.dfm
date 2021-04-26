@@ -60,6 +60,18 @@ object PdvModel: TPdvModel
       FieldName = 'EMAIL_CLIENTE'
       Size = 256
     end
+    object NotaFiscalVLR_SALDO_PAGAR: TCurrencyField
+      Alignment = taCenter
+      FieldName = 'VLR_SALDO_PAGAR'
+      DisplayFormat = '#,###,###,###,##0.00'
+      currency = False
+    end
+    object NotaFiscalVLR_TROCO: TCurrencyField
+      Alignment = taCenter
+      FieldName = 'VLR_TROCO'
+      DisplayFormat = '#,###,###,###,##0.00'
+      currency = False
+    end
   end
   object ProdutoNotaFiscal: TFDMemTable
     FieldDefs = <>
@@ -129,6 +141,9 @@ object PdvModel: TPdvModel
     end
   end
   object FormasPagto: TFDMemTable
+    AfterPost = FormasPagtoAfterDelete
+    AfterDelete = FormasPagtoAfterDelete
+    AggregatesActive = True
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
     ResourceOptions.AssignedValues = [rvSilentMode]
@@ -154,8 +169,22 @@ object PdvModel: TPdvModel
       FieldName = 'NOME_FORMA_PAGTO'
       Size = 60
     end
-    object FormasPagtoVLR_RECEBIDO: TCurrencyField
-      FieldName = 'VLR_RECEBIDO'
+    object FormasPagtoVLR_PAGO: TCurrencyField
+      FieldName = 'VLR_PAGO'
+      DisplayFormat = '#,###,###,###,##0.00'
+      currency = False
+    end
+    object FormasPagtoSTS_APAGAR: TBooleanField
+      FieldName = 'STS_APAGAR'
+    end
+    object FormasPagtoVLR_TOTAL_PAGO: TAggregateField
+      Alignment = taCenter
+      DisplayLabel = 'Vlr.Total Pago'
+      FieldName = 'VLR_TOTAL_PAGO'
+      Active = True
+      DisplayName = ''
+      DisplayFormat = '#,###,###,###,##0.00'
+      Expression = 'SUM(VLR_PAGO)'
     end
   end
   object ProdutoOrcamento: TFDMemTable

@@ -11,16 +11,20 @@ uses
   OrcamentoDuotec.dao.servidor.erpnfe in 'src\dao\OrcamentoDuotec.dao.servidor.erpnfe.pas' {OrcamentoDao: TDataModule},
   PDVConsultaOrcamento.view.client.erpnfe in 'src\view\PDVConsultaOrcamento.view.client.erpnfe.pas' {View_ConsultaOrcamento},
   Container.lib.erpnfe in 'src\lib\Container.lib.erpnfe.pas' {DM_Container: TDataModule},
-  PDVCheckout.client.erpnfe in 'src\view\PDVCheckout.client.erpnfe.pas' {Form1},
-  Main1PDV.view.client.erpnfe in 'src\view\Main1PDV.view.client.erpnfe.pas' {Form2};
+  PDVCheckout.client.erpnfe in 'src\view\PDVCheckout.client.erpnfe.pas' {View_CheckOut},
+  Main1PDV.view.client.erpnfe in 'src\view\Main1PDV.view.client.erpnfe.pas' {View_PDVAzul},
+  PDVAlterarVendedor.client.erpnfe in 'src\view\PDVAlterarVendedor.client.erpnfe.pas' {View_AlterarVendedor},
+  PDVConfiguracaoDispositivo.view.client.erpnfe in 'src\view\PDVConfiguracaoDispositivo.view.client.erpnfe.pas' {View_ConfiguracaoDispositivo},
+  PDVAlterarQuantidade.client.erpnfe in 'src\view\PDVAlterarQuantidade.client.erpnfe.pas' {View_AlterarQuantidade},
+  PDVConfiguracaoUsuario.client.erpnfe in 'src\view\PDVConfiguracaoUsuario.client.erpnfe.pas' {View_ConfiguracaoUsuario},
+  Estilo.lib in 'src\lib\Estilo.lib.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
+  ReportMemoryLeaksOnShutdown := true;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TView_PDV, View_PDV);
-  Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TView_PDVAzul, View_PDVAzul);
   Application.Run;
 end.

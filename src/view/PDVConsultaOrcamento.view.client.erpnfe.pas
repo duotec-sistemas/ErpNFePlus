@@ -24,6 +24,7 @@ type
     Lbl_Mensagem: TLabel;
     PraButtonStyle1: TPraButtonStyle;
     PraButtonStyle2: TPraButtonStyle;
+    Pnl_Titulo: TPanel;
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormCreate(Sender: TObject);
     procedure DBGrd_ConsultaKeyDown(Sender: TObject; var Key: Word;
@@ -66,7 +67,7 @@ end;
 
 procedure TView_ConsultaOrcamento.DBGrd_ConsultaDblClick(Sender: TObject);
 begin
-  Close;
+  ConfirmarOrcamentoSelecionado;
 end;
 
 procedure TView_ConsultaOrcamento.DBGrd_ConsultaEnter(Sender: TObject);
@@ -108,6 +109,14 @@ begin
   Self.BorderStyle := bsNone;
   Self.Tag := 0;
   FCodLoja := '01';
+
+  Self.Left := 0;
+  Self.Top := 0;
+  Self.Width := Screen.Width;
+  Self.Height := Screen.Height;
+  Pnl_BackGround.Left := (Self.Width - Pnl_BackGround.Width) div 2;
+  Pnl_BackGround.Top  := (Self.Height - Pnl_BackGround.Height) div 2;
+
 end;
 
 procedure TView_ConsultaOrcamento.FormKeyDown(Sender: TObject; var Key: Word;
@@ -141,6 +150,7 @@ procedure TView_ConsultaOrcamento.FormShow(Sender: TObject);
 begin
   Self.Tag := 0;
   Lbl_Mensagem.Caption := '';
+  Edt_Pesquisa.SetFocus;
 //  ControllerPDV.model.LimparTabelaOrcamento;
 end;
 

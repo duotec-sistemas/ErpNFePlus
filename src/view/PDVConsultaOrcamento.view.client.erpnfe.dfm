@@ -5,7 +5,7 @@ object View_ConsultaOrcamento: TView_ConsultaOrcamento
   Caption = 'View_ConsultaOrcamento'
   ClientHeight = 561
   ClientWidth = 915
-  Color = clBtnFace
+  Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -25,7 +25,6 @@ object View_ConsultaOrcamento: TView_ConsultaOrcamento
     Top = 0
     Width = 915
     Height = 561
-    Align = alClient
     BevelOuter = bvNone
     Color = 14866643
     Padding.Left = 5
@@ -46,9 +45,9 @@ object View_ConsultaOrcamento: TView_ConsultaOrcamento
       object Pnl_Central: TPanel
         AlignWithMargins = True
         Left = 16
-        Top = 93
+        Top = 157
         Width = 873
-        Height = 400
+        Height = 336
         Margins.Left = 15
         Margins.Right = 15
         Align = alClient
@@ -58,7 +57,7 @@ object View_ConsultaOrcamento: TView_ConsultaOrcamento
           Left = 0
           Top = 0
           Width = 873
-          Height = 400
+          Height = 336
           Align = alClient
           BorderStyle = bsNone
           DataSource = DtSrc_Orcamento
@@ -144,7 +143,7 @@ object View_ConsultaOrcamento: TView_ConsultaOrcamento
       end
       object Pnl_Cabecalho: TPanel
         Left = 1
-        Top = 1
+        Top = 65
         Width = 903
         Height = 89
         Align = alTop
@@ -293,6 +292,23 @@ object View_ConsultaOrcamento: TView_ConsultaOrcamento
           ExplicitTop = 1
           ExplicitHeight = 52
         end
+      end
+      object Pnl_Titulo: TPanel
+        Left = 1
+        Top = 1
+        Width = 903
+        Height = 64
+        Align = alTop
+        Caption = 'CONSULTAR PR'#201'-VENDA'
+        Color = clBlue
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -21
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 3
       end
     end
   end
