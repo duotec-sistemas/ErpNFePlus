@@ -66,7 +66,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     DtSrc_Produto: TDataSource;
-    Edit1: TEdit;
+    Edt_CodProduto: TEdit;
     GrdPnl_MaisOpcoes: TGridPanel;
     Panel3: TPanel;
     Lbl_EscMaisOpcoes: TLabel;
@@ -90,6 +90,7 @@ type
     Panel22: TPanel;
     Label27: TLabel;
     Label28: TLabel;
+    Lbl_Mensagem: TLabel;
     Lbl_PinPad: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -212,6 +213,7 @@ procedure TView_PDVAzul.ConfigurarBotoes;
 begin
   if ControllerPDV.model.ProdutoNotaFiscal.RecordCount > 0 then
   Begin
+    Lbl_Mensagem.Caption := 'EM PROCESSO DE VENDAS';
     Lbl_Esc.Font.Color := clRed;
     Lbl_Sair.Font.Color := clRed;
 
@@ -226,6 +228,7 @@ begin
   End
   else
   Begin
+    Lbl_Mensagem.Caption := 'CAIXA LIVRE';
     Lbl_Esc.Font.Color := clGreen;
     Lbl_Sair.Font.Color := clGreen;
 
@@ -278,6 +281,8 @@ begin
   View_ConsultaOrcamento.ShowModal;
 
   ConfigurarBotoes;
+
+  Edt_CodProduto.SetFocus;
 
 end;
 
@@ -403,6 +408,7 @@ end;
 procedure TView_PDVAzul.FormShow(Sender: TObject);
 begin
   ConfigurarBotoes;
+  Edt_CodProduto.SetFocus;
 end;
 
 procedure TView_PDVAzul.Lbl_F3DblClick(Sender: TObject);

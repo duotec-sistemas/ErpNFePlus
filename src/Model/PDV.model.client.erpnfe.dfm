@@ -61,16 +61,10 @@ object PdvModel: TPdvModel
       Size = 256
     end
     object NotaFiscalVLR_SALDO_PAGAR: TCurrencyField
-      Alignment = taCenter
       FieldName = 'VLR_SALDO_PAGAR'
-      DisplayFormat = '#,###,###,###,##0.00'
-      currency = False
     end
     object NotaFiscalVLR_TROCO: TCurrencyField
-      Alignment = taCenter
       FieldName = 'VLR_TROCO'
-      DisplayFormat = '#,###,###,###,##0.00'
-      currency = False
     end
   end
   object ProdutoNotaFiscal: TFDMemTable
@@ -131,17 +125,18 @@ object PdvModel: TPdvModel
       FieldName = 'NUM_ORCAMENTO'
     end
     object ProdutoNotaFiscalVLR_SUBTOTAL: TAggregateField
-      Alignment = taCenter
+      Alignment = taRightJustify
       DisplayLabel = 'Vlr.Subtotal'
       FieldName = 'VLR_SUBTOTAL'
       Active = True
+      currency = True
       DisplayName = ''
-      DisplayFormat = '#,###,###,###,##0.00'
       Expression = 'SUM(VLR_TOTAL_PRODUTO)'
     end
   end
   object FormasPagto: TFDMemTable
     AfterPost = FormasPagtoAfterDelete
+    BeforeDelete = FormasPagtoBeforeDelete
     AfterDelete = FormasPagtoAfterDelete
     AggregatesActive = True
     FetchOptions.AssignedValues = [evMode]
@@ -171,19 +166,17 @@ object PdvModel: TPdvModel
     end
     object FormasPagtoVLR_PAGO: TCurrencyField
       FieldName = 'VLR_PAGO'
-      DisplayFormat = '#,###,###,###,##0.00'
-      currency = False
     end
     object FormasPagtoSTS_APAGAR: TBooleanField
       FieldName = 'STS_APAGAR'
     end
     object FormasPagtoVLR_TOTAL_PAGO: TAggregateField
-      Alignment = taCenter
+      Alignment = taRightJustify
       DisplayLabel = 'Vlr.Total Pago'
       FieldName = 'VLR_TOTAL_PAGO'
       Active = True
+      currency = True
       DisplayName = ''
-      DisplayFormat = '#,###,###,###,##0.00'
       Expression = 'SUM(VLR_PAGO)'
     end
   end

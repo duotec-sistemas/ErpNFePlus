@@ -163,15 +163,18 @@ object View_CheckOut: TView_CheckOut
               Width = 213
               Height = 91
               Align = alClient
+              BevelOuter = bvNone
               TabOrder = 0
               object Label22: TLabel
                 Tag = 4
-                Left = 1
-                Top = 1
-                Width = 211
+                AlignWithMargins = True
+                Left = 3
+                Top = 3
+                Width = 198
                 Height = 30
+                Margins.Right = 12
                 Align = alTop
-                Alignment = taCenter
+                Alignment = taRightJustify
                 Caption = 'SubTotal'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -179,14 +182,16 @@ object View_CheckOut: TView_CheckOut
                 Font.Name = 'Segoe UI'
                 Font.Style = []
                 ParentFont = False
+                ExplicitLeft = 1
+                ExplicitTop = 1
                 ExplicitWidth = 79
               end
               object Edt_SubTotal: TDBEdit
                 Tag = 4
                 AlignWithMargins = True
-                Left = 16
-                Top = 36
-                Width = 186
+                Left = 15
+                Top = 41
+                Width = 188
                 Height = 37
                 Margins.Left = 15
                 Margins.Top = 5
@@ -208,6 +213,9 @@ object View_CheckOut: TView_CheckOut
                 ParentFont = False
                 ReadOnly = True
                 TabOrder = 0
+                ExplicitLeft = 16
+                ExplicitTop = 36
+                ExplicitWidth = 186
               end
             end
             object Panel6: TPanel
@@ -216,15 +224,18 @@ object View_CheckOut: TView_CheckOut
               Width = 212
               Height = 91
               Align = alClient
+              BevelOuter = bvNone
               TabOrder = 1
               object Label2: TLabel
                 Tag = 4
-                Left = 1
-                Top = 1
-                Width = 210
+                AlignWithMargins = True
+                Left = 3
+                Top = 3
+                Width = 197
                 Height = 30
+                Margins.Right = 12
                 Align = alTop
-                Alignment = taCenter
+                Alignment = taRightJustify
                 Caption = 'Valor Pago'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -232,14 +243,16 @@ object View_CheckOut: TView_CheckOut
                 Font.Name = 'Segoe UI'
                 Font.Style = []
                 ParentFont = False
+                ExplicitLeft = 1
+                ExplicitTop = 1
                 ExplicitWidth = 98
               end
               object Edt_VlrTotalPago: TDBEdit
                 Tag = 4
                 AlignWithMargins = True
-                Left = 16
-                Top = 36
-                Width = 185
+                Left = 15
+                Top = 41
+                Width = 187
                 Height = 37
                 Margins.Left = 15
                 Margins.Top = 5
@@ -261,6 +274,9 @@ object View_CheckOut: TView_CheckOut
                 ParentFont = False
                 ReadOnly = True
                 TabOrder = 0
+                ExplicitLeft = 16
+                ExplicitTop = 36
+                ExplicitWidth = 185
               end
             end
             object Panel7: TPanel
@@ -269,15 +285,18 @@ object View_CheckOut: TView_CheckOut
               Width = 212
               Height = 91
               Align = alClient
+              BevelOuter = bvNone
               TabOrder = 2
               object Label5: TLabel
                 Tag = 4
-                Left = 1
-                Top = 1
-                Width = 210
+                AlignWithMargins = True
+                Left = 3
+                Top = 3
+                Width = 197
                 Height = 30
+                Margins.Right = 12
                 Align = alTop
-                Alignment = taCenter
+                Alignment = taRightJustify
                 Caption = 'Valor a Pagar'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -285,14 +304,16 @@ object View_CheckOut: TView_CheckOut
                 Font.Name = 'Segoe UI'
                 Font.Style = []
                 ParentFont = False
+                ExplicitLeft = 1
+                ExplicitTop = 1
                 ExplicitWidth = 121
               end
               object Edt_VlrPagar: TDBEdit
                 Tag = 4
                 AlignWithMargins = True
-                Left = 16
-                Top = 36
-                Width = 185
+                Left = 15
+                Top = 41
+                Width = 187
                 Height = 37
                 Margins.Left = 15
                 Margins.Top = 5
@@ -314,6 +335,9 @@ object View_CheckOut: TView_CheckOut
                 ParentFont = False
                 ReadOnly = True
                 TabOrder = 0
+                ExplicitLeft = 16
+                ExplicitTop = 36
+                ExplicitWidth = 185
               end
             end
             object Panel8: TPanel
@@ -323,14 +347,16 @@ object View_CheckOut: TView_CheckOut
               Height = 91
               Align = alClient
               TabOrder = 3
-              object Lbl_Troco: TLabel
+              object Lbl_VlrTroco: TLabel
                 Tag = 4
-                Left = 1
-                Top = 1
-                Width = 209
+                AlignWithMargins = True
+                Left = 4
+                Top = 4
+                Width = 194
                 Height = 30
+                Margins.Right = 12
                 Align = alTop
-                Alignment = taCenter
+                Alignment = taRightJustify
                 Caption = 'Troco'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -338,13 +364,14 @@ object View_CheckOut: TView_CheckOut
                 Font.Name = 'Segoe UI'
                 Font.Style = []
                 ParentFont = False
-                ExplicitWidth = 50
+                ExplicitLeft = 3
+                ExplicitTop = 3
               end
               object Edt_VlrTroco: TDBEdit
                 Tag = 4
                 AlignWithMargins = True
                 Left = 16
-                Top = 36
+                Top = 42
                 Width = 184
                 Height = 37
                 Margins.Left = 15
@@ -367,6 +394,7 @@ object View_CheckOut: TView_CheckOut
                 ParentFont = False
                 ReadOnly = True
                 TabOrder = 0
+                ExplicitTop = 36
               end
             end
           end
@@ -378,8 +406,6 @@ object View_CheckOut: TView_CheckOut
           Height = 105
           Align = alTop
           TabOrder = 2
-          ExplicitLeft = 2
-          ExplicitTop = -5
           object Label3: TLabel
             Tag = 4
             Left = 8
@@ -474,6 +500,7 @@ object View_CheckOut: TView_CheckOut
             DisabledTextColor = 16119285
             DisabledColor = 16119285
             DecimalPlacesAlwaysShown = True
+            OnExit = Edt_VlrPagoExit
           end
         end
       end
@@ -511,6 +538,21 @@ object View_CheckOut: TView_CheckOut
               Column = 0
               Control = Panel13
               Row = 2
+            end
+            item
+              Column = 0
+              Control = Panel9
+              Row = 3
+            end
+            item
+              Column = 0
+              Control = Panel10
+              Row = 4
+            end
+            item
+              Column = 0
+              Control = Panel12
+              Row = 5
             end>
           ParentBackground = False
           RowCollection = <
@@ -591,7 +633,7 @@ object View_CheckOut: TView_CheckOut
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 1
-            object Lbl_F3: TLabel
+            object Lbl_F10: TLabel
               Tag = 4
               AlignWithMargins = True
               Left = 3
@@ -601,33 +643,33 @@ object View_CheckOut: TView_CheckOut
               Margins.Top = 8
               Align = alTop
               Alignment = taCenter
-              Caption = 'F3'
+              Caption = 'F10'
               Font.Charset = ANSI_CHARSET
               Font.Color = clGreen
               Font.Height = -19
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
               ParentFont = False
-              ExplicitWidth = 21
+              ExplicitWidth = 32
             end
             object Lbl_NovaVenda: TLabel
-              Tag = 4
+              Tag = 3
               Left = 0
               Top = 36
               Width = 132
               Height = 30
               Align = alClient
               Alignment = taCenter
-              Caption = 'Nova Venda'
+              Caption = 'Dados Adicionais'
               Font.Charset = ANSI_CHARSET
               Font.Color = clGreen
-              Font.Height = -19
+              Font.Height = -16
               Font.Name = 'Segoe UI'
               Font.Style = []
               ParentFont = False
               WordWrap = True
-              ExplicitWidth = 102
-              ExplicitHeight = 25
+              ExplicitWidth = 119
+              ExplicitHeight = 21
             end
           end
           object Panel13: TPanel
@@ -648,14 +690,14 @@ object View_CheckOut: TView_CheckOut
               Margins.Top = 8
               Align = alTop
               Alignment = taCenter
-              Caption = 'F5'
+              Caption = 'F11'
               Font.Charset = ANSI_CHARSET
               Font.Color = clGreen
               Font.Height = -19
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
               ParentFont = False
-              ExplicitWidth = 21
+              ExplicitWidth = 32
             end
             object Lbl_FecharVenda: TLabel
               Tag = 4
@@ -665,7 +707,7 @@ object View_CheckOut: TView_CheckOut
               Height = 30
               Align = alClient
               Alignment = taCenter
-              Caption = 'Encerrar Venda'
+              Caption = 'CPF'
               Font.Charset = ANSI_CHARSET
               Font.Color = clGreen
               Font.Height = -19
@@ -673,7 +715,154 @@ object View_CheckOut: TView_CheckOut
               Font.Style = []
               ParentFont = False
               WordWrap = True
-              ExplicitWidth = 129
+              ExplicitWidth = 32
+              ExplicitHeight = 25
+            end
+          end
+          object Panel9: TPanel
+            Left = 0
+            Top = 198
+            Width = 132
+            Height = 65
+            Align = alClient
+            BevelOuter = bvNone
+            TabOrder = 3
+            ExplicitTop = 210
+            ExplicitHeight = 41
+            object Label1: TLabel
+              Tag = 4
+              AlignWithMargins = True
+              Left = 3
+              Top = 8
+              Width = 126
+              Height = 25
+              Margins.Top = 8
+              Align = alTop
+              Alignment = taCenter
+              Caption = 'F12'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clGreen
+              Font.Height = -19
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ExplicitWidth = 32
+            end
+            object Label6: TLabel
+              Tag = 4
+              Left = 0
+              Top = 36
+              Width = 132
+              Height = 29
+              Align = alClient
+              Alignment = taCenter
+              Caption = 'NFe'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clGreen
+              Font.Height = -19
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              WordWrap = True
+              ExplicitWidth = 33
+              ExplicitHeight = 25
+            end
+          end
+          object Panel10: TPanel
+            Left = 0
+            Top = 263
+            Width = 132
+            Height = 66
+            Align = alClient
+            BevelOuter = bvNone
+            TabOrder = 4
+            ExplicitTop = 210
+            ExplicitHeight = 41
+            object Label7: TLabel
+              Tag = 4
+              AlignWithMargins = True
+              Left = 3
+              Top = 8
+              Width = 126
+              Height = 25
+              Margins.Top = 8
+              Align = alTop
+              Alignment = taCenter
+              Caption = 'Alt+F12'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clGreen
+              Font.Height = -19
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ExplicitWidth = 70
+            end
+            object Label8: TLabel
+              Tag = 4
+              Left = 0
+              Top = 36
+              Width = 132
+              Height = 30
+              Align = alClient
+              Alignment = taCenter
+              Caption = 'NFCe'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clGreen
+              Font.Height = -19
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              WordWrap = True
+              ExplicitWidth = 45
+              ExplicitHeight = 25
+            end
+          end
+          object Panel12: TPanel
+            Left = 0
+            Top = 329
+            Width = 132
+            Height = 66
+            Align = alClient
+            BevelOuter = bvNone
+            TabOrder = 5
+            ExplicitTop = 210
+            ExplicitHeight = 41
+            object Label9: TLabel
+              Tag = 4
+              AlignWithMargins = True
+              Left = 3
+              Top = 8
+              Width = 126
+              Height = 25
+              Margins.Top = 8
+              Align = alTop
+              Alignment = taCenter
+              Caption = 'Ctrl+F12'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clGreen
+              Font.Height = -19
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ExplicitWidth = 77
+            end
+            object Label10: TLabel
+              Tag = 4
+              Left = 0
+              Top = 36
+              Width = 132
+              Height = 30
+              Align = alClient
+              Alignment = taCenter
+              Caption = 'Requisi'#231#227'o'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clGreen
+              Font.Height = -19
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              WordWrap = True
+              ExplicitWidth = 90
               ExplicitHeight = 25
             end
           end
@@ -724,6 +913,7 @@ object View_CheckOut: TView_CheckOut
     Top = 550
   end
   object DtSrc_NF: TDataSource
+    OnUpdateData = DtSrc_NFUpdateData
     Left = 255
     Top = 542
   end

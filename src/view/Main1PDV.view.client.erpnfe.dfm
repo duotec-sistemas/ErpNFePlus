@@ -55,6 +55,25 @@ object View_PDVAzul: TView_PDVAzul
         Color = clBlue
         ParentBackground = False
         TabOrder = 0
+        object Lbl_Mensagem: TLabel
+          AlignWithMargins = True
+          Left = 157
+          Top = 3
+          Width = 854
+          Height = 58
+          Align = alClient
+          Alignment = taCenter
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -21
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          Layout = tlCenter
+          WordWrap = True
+          ExplicitWidth = 6
+          ExplicitHeight = 30
+        end
         object Lbl_PinPad: TLabel
           AlignWithMargins = True
           Left = 3
@@ -389,6 +408,7 @@ object View_PDVAzul: TView_PDVAzul
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 4
+              ExplicitHeight = 76
               object Label14: TLabel
                 Tag = 4
                 AlignWithMargins = True
@@ -438,6 +458,8 @@ object View_PDVAzul: TView_PDVAzul
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 5
+              ExplicitTop = 376
+              ExplicitHeight = 75
               object Lbl_F5: TLabel
                 Tag = 4
                 AlignWithMargins = True
@@ -567,14 +589,14 @@ object View_PDVAzul: TView_PDVAzul
                 Caption = 'Consultar Produto'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clGreen
-                Font.Height = -19
+                Font.Height = -16
                 Font.Name = 'Segoe UI'
                 Font.Style = []
                 ParentFont = False
                 WordWrap = True
                 OnDblClick = Label20DblClick
-                ExplicitWidth = 86
-                ExplicitHeight = 50
+                ExplicitWidth = 127
+                ExplicitHeight = 21
               end
             end
             object Panel14: TPanel
@@ -688,9 +710,9 @@ object View_PDVAzul: TView_PDVAzul
           object Pnl_Rodape: TPanel
             AlignWithMargins = True
             Left = 16
-            Top = 628
+            Top = 637
             Width = 846
-            Height = 119
+            Height = 110
             Margins.Left = 15
             Margins.Right = 15
             Align = alBottom
@@ -702,17 +724,20 @@ object View_PDVAzul: TView_PDVAzul
               Left = 536
               Top = 0
               Width = 310
-              Height = 119
+              Height = 110
               Align = alRight
               BevelOuter = bvNone
               TabOrder = 0
+              ExplicitHeight = 119
               object Label22: TLabel
-                Left = 0
-                Top = 0
-                Width = 310
+                AlignWithMargins = True
+                Left = 3
+                Top = 5
+                Width = 304
                 Height = 37
+                Margins.Top = 5
                 Align = alTop
-                Alignment = taCenter
+                Alignment = taRightJustify
                 Caption = 'SubTotal'
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
@@ -720,39 +745,50 @@ object View_PDVAzul: TView_PDVAzul
                 Font.Name = 'Segoe UI Semibold'
                 Font.Style = [fsBold]
                 ParentFont = False
+                ExplicitLeft = 0
+                ExplicitTop = 0
                 ExplicitWidth = 106
               end
               object DBEdit1: TDBEdit
                 AlignWithMargins = True
                 Left = 15
-                Top = 47
+                Top = 45
                 Width = 285
-                Height = 62
+                Height = 45
                 Margins.Left = 15
-                Margins.Top = 10
+                Margins.Top = 0
                 Margins.Right = 10
-                Margins.Bottom = 10
+                Margins.Bottom = 20
                 Align = alClient
+                BevelInner = bvNone
+                BevelOuter = bvNone
                 BorderStyle = bsNone
                 Color = 16119285
+                Ctl3D = False
                 DataField = 'VLR_SUBTOTAL'
+                DataSource = DtSrc_Produto
                 Font.Charset = ANSI_CHARSET
                 Font.Color = clWindowText
                 Font.Height = -29
                 Font.Name = 'Segoe UI'
                 Font.Style = [fsBold]
+                ParentCtl3D = False
                 ParentFont = False
                 TabOrder = 0
+                StyleElements = []
+                ExplicitTop = 38
+                ExplicitHeight = 71
               end
             end
             object Panel13: TPanel
               Left = 0
               Top = 0
               Width = 536
-              Height = 119
+              Height = 110
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 1
+              ExplicitHeight = 119
               object Label1: TLabel
                 Left = 0
                 Top = 0
@@ -774,7 +810,7 @@ object View_PDVAzul: TView_PDVAzul
                 Left = 3
                 Top = 28
                 Width = 530
-                Height = 88
+                Height = 79
                 Align = alClient
                 BorderStyle = bsNone
                 Font.Charset = ANSI_CHARSET
@@ -786,6 +822,7 @@ object View_PDVAzul: TView_PDVAzul
                   '')
                 ParentFont = False
                 TabOrder = 0
+                ExplicitHeight = 88
               end
             end
           end
@@ -802,7 +839,7 @@ object View_PDVAzul: TView_PDVAzul
             Color = 4227327
             ParentBackground = False
             TabOrder = 1
-            object Edit1: TEdit
+            object Edt_CodProduto: TEdit
               AlignWithMargins = True
               Left = 3
               Top = 9
@@ -828,7 +865,7 @@ object View_PDVAzul: TView_PDVAzul
             Left = 9
             Top = 63
             Width = 865
-            Height = 559
+            Height = 568
             Margins.Left = 8
             Align = alClient
             BorderStyle = bsNone
@@ -897,7 +934,7 @@ object View_PDVAzul: TView_PDVAzul
             Left = 1
             Top = 60
             Width = 876
-            Height = 565
+            Height = 574
             Align = alClient
             BevelOuter = bvNone
             Color = clGradientInactiveCaption
@@ -973,14 +1010,16 @@ object View_PDVAzul: TView_PDVAzul
                 Value = 12.500000000000000000
               end>
             TabOrder = 3
+            ExplicitHeight = 590
             object Panel3: TPanel
               Left = 0
               Top = 0
               Width = 876
-              Height = 71
+              Height = 72
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 0
+              ExplicitHeight = 71
               object Lbl_EscMaisOpcoes: TLabel
                 Tag = 4
                 Left = 0
@@ -1005,7 +1044,7 @@ object View_PDVAzul: TView_PDVAzul
                 Left = 0
                 Top = 25
                 Width = 876
-                Height = 46
+                Height = 47
                 Align = alClient
                 Alignment = taCenter
                 Caption = 'Voltar'
@@ -1024,12 +1063,14 @@ object View_PDVAzul: TView_PDVAzul
             end
             object Panel16: TPanel
               Left = 0
-              Top = 71
+              Top = 72
               Width = 876
-              Height = 70
+              Height = 72
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 1
+              ExplicitTop = 71
+              ExplicitHeight = 70
               object Label10: TLabel
                 Tag = 4
                 Left = 0
@@ -1053,7 +1094,7 @@ object View_PDVAzul: TView_PDVAzul
                 Left = 0
                 Top = 25
                 Width = 876
-                Height = 45
+                Height = 47
                 Align = alClient
                 Alignment = taCenter
                 Caption = 'Configurar Dispositivo'
@@ -1071,12 +1112,13 @@ object View_PDVAzul: TView_PDVAzul
             end
             object Panel17: TPanel
               Left = 0
-              Top = 141
+              Top = 144
               Width = 876
               Height = 71
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 2
+              ExplicitTop = 141
               object Label12: TLabel
                 Tag = 4
                 Left = 0
@@ -1118,12 +1160,14 @@ object View_PDVAzul: TView_PDVAzul
             end
             object Panel18: TPanel
               Left = 0
-              Top = 212
+              Top = 215
               Width = 876
-              Height = 70
+              Height = 72
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 3
+              ExplicitTop = 212
+              ExplicitHeight = 70
               object Label16: TLabel
                 Tag = 4
                 Left = 0
@@ -1147,7 +1191,7 @@ object View_PDVAzul: TView_PDVAzul
                 Left = 0
                 Top = 25
                 Width = 876
-                Height = 45
+                Height = 47
                 Align = alClient
                 Alignment = taCenter
                 Caption = 'Cancelar TEF'
@@ -1165,12 +1209,14 @@ object View_PDVAzul: TView_PDVAzul
             end
             object Panel19: TPanel
               Left = 0
-              Top = 282
+              Top = 287
               Width = 876
-              Height = 71
+              Height = 72
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 4
+              ExplicitTop = 282
+              ExplicitHeight = 71
               object Label18: TLabel
                 Left = 0
                 Top = 0
@@ -1191,7 +1237,7 @@ object View_PDVAzul: TView_PDVAzul
                 Left = 0
                 Top = 25
                 Width = 876
-                Height = 46
+                Height = 47
                 Align = alClient
                 Alignment = taCenter
                 Font.Charset = ANSI_CHARSET
@@ -1208,23 +1254,27 @@ object View_PDVAzul: TView_PDVAzul
             end
             object Panel20: TPanel
               Left = 0
-              Top = 353
+              Top = 359
               Width = 876
-              Height = 71
+              Height = 72
               Align = alClient
               BevelOuter = bvNone
               Color = 16311511
               ParentBackground = False
               TabOrder = 5
+              ExplicitTop = 353
+              ExplicitHeight = 71
             end
             object Panel21: TPanel
               Left = 0
-              Top = 424
+              Top = 431
               Width = 876
-              Height = 70
+              Height = 71
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 6
+              ExplicitTop = 424
+              ExplicitHeight = 70
               object Label25: TLabel
                 Left = 0
                 Top = 0
@@ -1245,7 +1295,7 @@ object View_PDVAzul: TView_PDVAzul
                 Left = 0
                 Top = 25
                 Width = 876
-                Height = 45
+                Height = 46
                 Align = alClient
                 Alignment = taCenter
                 Font.Charset = ANSI_CHARSET
@@ -1262,12 +1312,14 @@ object View_PDVAzul: TView_PDVAzul
             end
             object Panel22: TPanel
               Left = 0
-              Top = 494
+              Top = 502
               Width = 876
-              Height = 71
+              Height = 72
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 7
+              ExplicitTop = 494
+              ExplicitHeight = 71
               object Label27: TLabel
                 Left = 0
                 Top = 0
@@ -1288,7 +1340,7 @@ object View_PDVAzul: TView_PDVAzul
                 Left = 0
                 Top = 25
                 Width = 876
-                Height = 46
+                Height = 47
                 Align = alClient
                 Alignment = taCenter
                 Font.Charset = ANSI_CHARSET

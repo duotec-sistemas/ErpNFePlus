@@ -9,7 +9,8 @@ uses
   PDV.controller.servidor.erpnfe, JvExMask, JvToolEdit, JvBaseEdits, Vcl.Buttons,
   JvComponentBase, JvEnterTab, ACBrBase, ACBrEnterTab, cxGraphics,
   cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, cxButtons, Estilo.lib,
-  JvExControls, JvButton, JvTransparentButton, Funcoes.lib.erpnfe;
+  JvExControls, JvButton, JvTransparentButton, Funcoes.lib.erpnfe, sCalculator,
+  JvBaseDlg, JvCalc, ACBrCalculadora;
 
 type
   TView_CheckOut = class(TForm)
@@ -40,20 +41,29 @@ type
     Edt_VlrTotalPago: TDBEdit;
     Label5: TLabel;
     Edt_VlrPagar: TDBEdit;
-    Lbl_Troco: TLabel;
+    Lbl_VlrTroco: TLabel;
     Edt_VlrTroco: TDBEdit;
     GrdPnl_Opcoes: TGridPanel;
     Pnl_OpcaoEscape: TPanel;
     Lbl_Esc: TLabel;
     Lbl_Sair: TLabel;
     Panel11: TPanel;
-    Lbl_F3: TLabel;
+    Lbl_F10: TLabel;
     Lbl_NovaVenda: TLabel;
     Panel13: TPanel;
     Lbl_F5: TLabel;
     Lbl_FecharVenda: TLabel;
     Btn_Adicionar: TJvTransparentButton;
     Edt_VlrPago: TJvCalcEdit;
+    Panel9: TPanel;
+    Label1: TLabel;
+    Label6: TLabel;
+    Panel10: TPanel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Panel12: TPanel;
+    Label9: TLabel;
+    Label10: TLabel;
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormCreate(Sender: TObject);
     procedure PraButtonStyle1Click(Sender: TObject);
@@ -62,6 +72,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure Btn_AdicionarClick(Sender: TObject);
     procedure Edt_VlrPagoExit(Sender: TObject);
+    procedure DtSrc_NFUpdateData(Sender: TObject);
   private
     FControllerPDV: IControllerPDV;
     procedure SetControllerPDV(const Value: IControllerPDV);
@@ -87,7 +98,15 @@ procedure TView_CheckOut.AdicionarFormaPagto;
 begin
   if Edt_VlrPago.Text > '0' then
   begin
-    ControllerPDV.model.AdicionarFormaPagto(CmbBx_FormaPagto.Text, StrToFloatDef(Edt_VlrPago.Text, 0));
+    Try
+      ControllerPDV.model.AdicionarFormaPagto(CmbBx_FormaPagto.Text, StrToFloatDef(Edt_VlrPago.Text, 0));
+    except
+      on e : Exception do
+      begin
+        Edt_VlrPago.Clear;
+        raise;
+      end;
+    End;
     if ControllerPDV.model.NotaFiscalVLR_SALDO_PAGAR.AsCurrency = 0 then
     begin
 //      EncerrarVenda;
@@ -115,6 +134,19 @@ begin
  }
 end;
 
+procedure TView_CheckOut.DtSrc_NFUpdateData(Sender: TObject);
+begin
+  if ControllerPDV.model.NotaFiscalVLR_TROCO.AsCurrency > 0  then
+  begin
+    Lbl_VlrTroco.Font.Color := clMaroon;
+    Edt_VlrTroco.Font.Color := clMaroon;
+  end
+  else begin
+    Lbl_VlrTroco.Font.Color := clBlack;
+    Edt_VlrTroco.Font.Color := clBlack;
+  end;
+end;
+
 procedure TView_CheckOut.Edt_VlrPagoExit(Sender: TObject);
 begin
   if Screen.ActiveControl.Name = 'DBGrd_FormaPagto' then
@@ -129,7 +161,7 @@ begin
   Pnl_Mensagem.Caption := 'AGUARDE!!! Gravando Documento ';
   Pnl_Mensagem.Update;
   Application.ProcessMessages;
-  ControllerPDV.model.EncerrarVenda;
+//  ControllerPDV.model.EncerrarVenda;
   Close;
 end;
 
@@ -173,7 +205,6 @@ begin
   DtSrc_FormaPagto.DataSet := ControllerPDV.model.FormasPagto;
   DtSrc_ProdutoNF.DataSet := ControllerPDV.model.ProdutoNotaFiscal;
   DtSrc_NF.DataSet := ControllerPDV.model.NotaFiscal;
-
 end;
 
 end.

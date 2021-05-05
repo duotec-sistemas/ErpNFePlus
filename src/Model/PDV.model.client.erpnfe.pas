@@ -49,8 +49,10 @@ type
     NotaFiscalVLR_SALDO_PAGAR: TCurrencyField;
     NotaFiscalVLR_TROCO: TCurrencyField;
     procedure FormasPagtoAfterDelete(DataSet: TDataSet);
+    procedure FormasPagtoBeforeDelete(DataSet: TDataSet);
   private
     { Private declarations }
+    FVlrPagoDinheiro : Currency;
     procedure ObterOrcamento(Const PCodLoja: String; Const PNumOrcamento: Integer; Tbl: TFDMemTable);
     procedure CriarIndiceOrdenacao;
   public
@@ -85,6 +87,13 @@ begin
 
   if Not FormasPagto.Active then
     FormasPagto.Active := true;
+
+  if FormasPagto.Locate('NOME_FORMA_PAGTO',PFormaPagto,[loCaseInsensitive]) then
+      raise Exception.Create('Forma de pagamento já esta lançada.'+ sLineBreak
+      + 'Para alterar o valor apague a linha e digite novamente');
+
+
+
 
   FormasPagto.Append;
   FormasPagtoNOME_FORMA_PAGTO.AsString := PFormaPagto;
@@ -191,6 +200,15 @@ begin
     NotaFiscalVLR_TROCO.AsCurrency := NotaFiscalVLR_SALDO_PAGAR.AsCurrency * -1;
     NotaFiscalVLR_SALDO_PAGAR.AsCurrency := 0;
   end;
+
+
+end;
+
+procedure TPdvModel.FormasPagtoBeforeDelete(DataSet: TDataSet);
+begin
+  if UpperCase(FormasPagtoNOME_FORMA_PAGTO.AsString) = 'DINHEIRO' then
+    FVlrPagoDinheiro := 0;
+
 end;
 
 procedure TPdvModel.LimparTabelaOrcamento;
@@ -207,6 +225,7 @@ begin
   NotaFiscal.EmptyDataSet;
   FormasPagto.EmptyDataSet;
   ProdutoNotaFiscal.EmptyDataSet;
+  FVlrPagoDinheiro := 0;
 end;
 
 procedure TPdvModel.ObterListaOrcamento(PCodLoja, PNomeCliente: string);
